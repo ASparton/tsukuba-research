@@ -42,8 +42,8 @@ def main():
     # x_train = ip.get_noisy_images(x_train)
     # x_test = ip.get_noisy_images(x_test)
     
-    # x_train = ip.get_rotated_images(x_train)
-    # x_test = ip.get_rotated_images(x_test)
+    x_train = ip.get_rotated_images(x_train)
+    x_test = ip.get_rotated_images(x_test)
     
     # Prepare data for the CNN model (normalization & reshaping)
     x_cnn_train = ip.get_cnn_prepared_features(x_train)
