@@ -61,7 +61,7 @@ def get_predictions(trained_model, x_test):
     predictions = trained_model.predict(x_test)
     return np.argmax(predictions, axis = 1)
 
-def get_model_accuracy(trained_model, x_test, y_test):
-    """Returns the trained model accuracy depending on the given test dataset given."""
+def get_model_reliability(trained_model, x_test, y_test):
+    """Returns the trained model reliability depending on the given test dataset given."""
     
     return trained_model.evaluate(x_test, y_test, verbose = 0)[1]
