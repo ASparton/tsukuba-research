@@ -10,6 +10,8 @@ def get_nb_classification_errors(model_predictions: numpy.ndarray, expected_outp
     return nb_errors
 
 def get_nb_common_errors(predictions1: numpy.ndarray, predictions2: numpy.ndarray, expected_output: numpy.ndarray) -> int:
+    """Get the number of common errors between the two predictions array given."""
+    
     nb_common_errors = 0
     for i in range(len(predictions1)):
         if ((predictions1[i] == predictions2[i]) and predictions1[i] != expected_output[i]):

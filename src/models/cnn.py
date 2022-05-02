@@ -1,12 +1,12 @@
 import numpy as np
 from tensorflow import keras
 
-def build_model():
+def build_mnist_model():
     """Build a CNN model with 2 convolution layers & 1 dense layer."""
     
     # Model parameters
-    nb_classes = 10
-    pixels_matrix_shape = (28, 28, 1)
+    nb_classes = 62
+    pixels_matrix_shape = (128, 128, 3)
     kernel_shape = (3, 3)
     pooling_shape = (2, 2)
     
@@ -46,7 +46,7 @@ def build_model():
                   metrics=['accuracy'])
     return model
 
-def train_model(model_to_train, x_train, y_train, x_test, y_test):
+def train_mnist_model(model_to_train, x_train, y_train, x_test, y_test):
     """Train the given model with the data provided."""
     
     model_to_train.fit(x_train, y_train,
