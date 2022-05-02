@@ -1,7 +1,7 @@
 import numpy
 from statistics import mode
 
-from inputs.read import get_belgium_traffic_signs
+from inputs.read import get_arabic_traffic_signs
 import inputs.preprocessing as ip
 import models.cnn as cnn
 import models.knn as knn
@@ -20,7 +20,7 @@ def get_system_predictions(models_predictions : list[list[int]]) -> list[int] :
 def main():
     # DATA
     # Get dataset + split train and test data
-    (x_train, y_train), (x_test, y_test) = get_belgium_traffic_signs()
+    (x_train, y_train), (x_test, y_test) = get_arabic_traffic_signs(500)
     
     # Prepare data for the CNN model (normalization & reshaping)
     x_cnn_train = ip.normalize_pixels(x_train)
